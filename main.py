@@ -38,7 +38,6 @@ def set_cody_context(url, user_prompt):
   response = requests.post(url, headers=headers, json=data, stream=True)
   # persist system text and speaker to as object to store in message_history
   # parse line by line and get the last occurance of event: completion line9
-  print(response.text)
   lines = response.text.split('\n')
   recent_message = {}
   for i,line in enumerate(lines):
