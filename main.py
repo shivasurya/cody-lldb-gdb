@@ -50,6 +50,10 @@ def set_cody_context(url, user_prompt):
       # remove Assistant: from string if it present
       if codyLLDBCommands.startswith("Assistant: "):
         codyLLDBCommands = codyLLDBCommands[len("Assistant: "):]
+
+      if codyLLDBCommands.startswith("Human: "):
+        codyLLDBCommands = codyLLDBCommands[len("Human: "):]
+
       recent_message = {
         "speaker": "assistant",
         "text": codyLLDBCommands,
